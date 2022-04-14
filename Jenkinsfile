@@ -12,6 +12,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'Dockerpwd', passwordVariable: 'DockerpwdPassword', usernameVariable: 'DockerpwdUser')]) {
                 sh "docker login -u ${env.DockerpwdUser} -p ${env.DockerpwdPassword}"
                 sh 'docker push shivrajdocker02/angular-cal'
+                  }
             }
         }
         stage('Run and Validate ') {
