@@ -15,7 +15,7 @@ pipeline {
                   }
             }
         }
-        stage('Run and Validate ') {
+        stage('Run container and Validate ') {
             steps {
                 sh 'docker container run -dt -p 9090:80 shivrajdocker02/angular-cal'
                 sh 'docker image ls'
