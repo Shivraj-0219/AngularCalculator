@@ -9,7 +9,7 @@ pipeline {
                 sh 'docker build -t shivrajdocker02/angular-cal .'
             }
         }
-        stage('Push Docker') {
+        stage('Manage Credentials and Push Docker') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'Dockerpwd', passwordVariable: 'DockerpwdPassword', usernameVariable: 'DockerpwdUser')]) {
                 sh "docker login -u ${env.DockerpwdUser} -p ${env.DockerpwdPassword}"
