@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Docker Build') {
             steps {
-                sh 'docker built --tag shivrajdocker02/angular-cal .'
+                sh 'docker build -t shivrajdocker02/angular-cal .'
             }
         }
         stage('Push Docker') {
